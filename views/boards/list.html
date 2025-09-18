@@ -7,20 +7,20 @@
 </head>
 <body>
     <div id="inner">
-    <h1>게시글 목록</h1>
-    <ul>
-        {% if lists.length > 0 %}
-            {% for item in lists %}
-                <li>
-                    <p>{{ item.id }}번째 글</p>
-                    <p>ID: {{ item.userId }}</p>
-                    <p>내용: {{ item.content }}</p>
-                    <p>생성일: {{ item.date }}</p>
-                </li>
-            {% endfor %}
-        {% endif %}
-    </ul>
-    <button onclick="location.href = `/boards/create`">글 작성</button>
+        <h1>게시글 목록</h1>
+        <ul>
+            {% if lists.length > 0 %}
+                {% for item in lists %}
+                    <li>
+                        <p>{{ item.id }}번째 글</p>
+                        <p>ID: {{ item.userId }}</p>
+                        <p>내용: {{ item.content }}</p>
+                        <p>생성일: {{ item.date }}</p>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+        <button onclick="location.href = `/boards/create`">글 작성</button>
     </div>
 </body>
 </html>
