@@ -1,0 +1,14 @@
+sequenceDiagram
+participant client
+participant server
+client ->> server: GET / HTTP1.1
+server -->> client: HTTP/1.1 200 OK
+client ->> server: GET /boards HTTP1.1
+server -->> client: HTTP/1.1 200 OK
+client ->> server: GET /boards/create HTTP1.1
+server -->> client: HTTP/1.1 200 OK
+client ->> server: POST /boards/create HTTP1.1
+Note over server,server: 입력값을 받아 lists에 push
+server -->> client: redirect /boards
+client ->> server: GET /boards HTTP1.1
+server -->> client: HTTP/1.1 200 OK
